@@ -4,20 +4,20 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>YEni Referans Ekleme Sayfası</h2>
+<h2>Yeni Referans Ekleme Sayfası</h2>
 
 <form method="post">
     <label>Referans Adı</label>
-    <input type="text" class="form-control" />
+    <input type="text" name="NameSurname" class="form-control" />
     <br />
     <label>Referans Unvan</label>
-    <input type="text" class="form-control" />
+    <input type="text" name="Title" class="form-control" />
     <br />
-    <label>Referans Göresli</label>
-    <input type="text" class="form-control" />
+    <label>Referans Görseli</label>
+    <input type="text" name="ImageUrl" class="form-control" />
     <br />
     <label>Referans Yorumu</label>
-    <input type="text" class="form-control" />
+    <textarea class="form-control" rows="5" name="Comment"> </textarea>
     <br />
     <button class="btn btn-info">Referans Ekle</button>
 </form>
