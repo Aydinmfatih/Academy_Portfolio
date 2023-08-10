@@ -1,0 +1,20 @@
+﻿@model MyEğitimAkademi_Portfolio.Models.Experience
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Deneyim Güncelleme Sayfası</h2>
+
+
+<form method="post">
+    <label>Deneyim ID</label>
+    @Html.TextBoxFor(x => x.ExperienceID, new { @class = "form-control" })
+    <label>Deneyim Adı </label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Deneyim Açıklaması </label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+    <br />
+</form>

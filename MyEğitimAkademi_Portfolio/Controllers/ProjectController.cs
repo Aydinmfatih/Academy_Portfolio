@@ -7,53 +7,51 @@ using MyEğitimAkademi_Portfolio.Models;
 
 namespace MyEğitimAkademi_Portfolio.Controllers
 {
-    public class ServiceController : Controller
+    public class ProjectController : Controller
     {
         MyPortfolioDbEntities db = new MyPortfolioDbEntities();
-
         public ActionResult Index()
         {
-            var values = db.Service.ToList();
+            var values = db.Project.ToList();
             return View(values);
         }
-        [HttpGet]
-        public ActionResult AddService()
-        {
 
+        [HttpGet]
+        public ActionResult AddProject()
+        {
             return View();
         }
         [HttpPost]
-        public ActionResult AddService(Service service)
+        public ActionResult AddProject(Project project)
         {
-            db.Service.Add(service);
+            db.Project.Add(project);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult DeleteService(int id)
+        public ActionResult DeleteProject(int id)
         {
-            var values = db.Service.Find(id);
-            db.Service.Remove(values);
+            var value = db.Project.Find(id);
+            db.Project.Remove(value);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public ActionResult UpdateService(int id)
+        public  ActionResult UpdateProject(int id)
         {
-            var value = db.Service.Find(id);
+            var value = db.Project.Find(id);
             return View(value);
-
         }
         [HttpPost]
-        public ActionResult UpdateService(Service service )
+        public ActionResult UpdateProject(Project project)
         {
-            var value = db.Service.Find(service.ServiceID);
-            value.ServiceID = service.ServiceID;
-            value.ServiceName = service.ServiceName;
+            var value = db.Project.Find(project.ProjectID);
+            value.ProjectID = project.ProjectID;
+            value.Title = project.Title;
+            value.Description = project.Description;
+            value.ProjectCategory = project.ProjectCategory;
             db.SaveChanges();
-            
             return RedirectToAction("Index");
-
         }
 
     }
