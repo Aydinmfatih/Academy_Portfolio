@@ -12,6 +12,17 @@ namespace MyEğitimAkademi_Portfolio.Controllers
         {
             return View();
         }
-        
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialNavbar()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialQuickContact()
+        {
+            return PartialView();
+        }
     }
 }
