@@ -33,5 +33,7 @@ namespace MyEğitimAkademi_Portfolio.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<Experience> Experience { get; set; }
+        public virtual DbSet<Award> Award { get; set; }
+        public virtual DbSet<Partner> Partner { get; set; }
     }
 }

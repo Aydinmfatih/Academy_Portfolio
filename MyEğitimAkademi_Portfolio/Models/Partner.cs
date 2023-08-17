@@ -12,10 +12,11 @@ namespace MyEğitimAkademi_Portfolio.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Skill
+    public partial class Partner
     {
-        public int SkillID { get; set; }
-        public string SkillTitle { get; set; }
-        public Nullable<byte> SkillValue { get; set; }
+        public int PartnerID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Value { get; set; }
     }
 }

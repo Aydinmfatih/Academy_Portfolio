@@ -43,8 +43,9 @@ namespace MyEğitimAkademi_Portfolio.Controllers
         public ActionResult UpdateSkill(Skill skill)
         {
             var value = db.Skill.Find(skill.SkillID);
-            value.SkillID = skill.SkillID;
-            value.SkillName = skill.SkillName;
+            value.SkillID = skill.SkillID; 
+            value.SkillTitle = skill.SkillTitle;
+            value.SkillValue = skill.SkillValue;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

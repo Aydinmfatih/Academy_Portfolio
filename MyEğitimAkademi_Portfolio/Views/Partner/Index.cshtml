@@ -1,29 +1,31 @@
-﻿@model List<MyEğitimAkademi_Portfolio.Models.Skill>
+﻿@model List<MyEğitimAkademi_Portfolio.Models.Partner>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Yeteneklerim</h2>
+<h2>Partner Sayfası</h2>
 
 <table class="table table-bordered">
     <tr>
         <th>#</th>
-        <th>Adı</th>
-        <th>Yüzdesi</th>
+        <th>Partner Adı</th>
+        <th>Partner Açıklaması</th>
+        <th>Partner Değeri</th>
         <th>Sil</th>
         <th>Güncelle</th>
     </tr>
     @foreach (var item in Model)
     {
 <tr>
-    <td>@item.SkillID</td>
-    <td>@item.SkillTitle</td>
-    <td>@item.SkillValue</td>
+    <td>@item.PartnerID</td>
+    <td>@item.Title</td>
+    <td>@item.Description</td>
+    <td>@item.Value</td>
     <td>
-        <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal-@item.SkillID">Sil</a>
+        <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal-@item.PartnerID">Sil</a>
     </td>
-    <div class="modal fade" id="deleteModal-@item.SkillID" tabindex="-1" role="dialog">
+    <div class="modal fade" id="deleteModal-@item.PartnerID" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -37,14 +39,13 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
-                    <a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-outline-danger">Evet</a>
+                    <a href="/Partner/DeletePartner/@item.PartnerID" class="btn btn-outline-danger">Evet</a>
                 </div>
             </div>
         </div>
     </div>
-    <td><a class="btn btn-outline-success" href="/Skill/UpdateSkill/@item.SkillID">Güncelle</a></td>
+    <td><a class="btn btn-outline-success" href="/Partner/UpdatePartner/@item.PartnerID">Güncelle</a></td>
 </tr>
     }
-
 </table>
-<td><a href="/Skill/AddSkill" class="btn btn-outline-primary">Yeni Yetenek Girişi</a></td>
+<a href="/Partner/AddPartner" class="btn btn-outline-primary">Yeni Deneyim Girişi</a>

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddPartner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Partner Ekleme Sayfası</h2>
+
+
+<form method="post">
+    <label>Partner Adı</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Partner Değeri</label>
+    <input type="text" name="Value" class="form-control" />
+    <br />
+    <label>Partner Açıklaması</label>
+    <textarea name="Description" class="form-control" rows="5"> </textarea>
+    <br />
+    <button class="btn btn-info">Partner Ekle</button>
+</form>
+

@@ -16,6 +16,14 @@
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="AboutImage" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="AwardID" />
+          </Key>
+          <Property Name="AwardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -30,6 +38,15 @@
           <Property Name="ExperienceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="PartnerID" />
+          </Key>
+          <Property Name="PartnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="30" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="Value" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -47,14 +64,15 @@
             <PropertyRef Name="ServiceID" />
           </Key>
           <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ServiceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
             <PropertyRef Name="SkillID" />
           </Key>
           <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkillTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkillValue" Type="tinyint" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -90,8 +108,10 @@
         </Association>
         <EntityContainer Name="MyPortfolioDbModelStoreContainer">
           <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
@@ -122,7 +142,7 @@
             <PropertyRef Name="ServiceID" />
           </Key>
           <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ServiceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="MyPortfolioDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="About" EntityType="Self.About" />
@@ -137,6 +157,8 @@
           </AssociationSet>
           <EntitySet Name="Skill" EntityType="MyPortfolioDbModel.Skill" />
           <EntitySet Name="Experience" EntityType="MyPortfolioDbModel.Experience" />
+          <EntitySet Name="Award" EntityType="MyPortfolioDbModel.Award" />
+          <EntitySet Name="Partner" EntityType="MyPortfolioDbModel.Partner" />
         </EntityContainer>
         <EntityType Name="Testimonial">
           <Key>
@@ -195,7 +217,8 @@
             <PropertyRef Name="SkillID" />
           </Key>
           <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SkillTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SkillValue" Type="Byte" />
         </EntityType>
         <EntityType Name="Experience">
           <Key>
@@ -204,6 +227,23 @@
           <Property Name="ExperienceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="AwardID" />
+          </Key>
+          <Property Name="AwardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="PartnerID" />
+          </Key>
+          <Property Name="PartnerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -276,7 +316,8 @@
           <EntitySetMapping Name="Skill">
             <EntityTypeMapping TypeName="MyPortfolioDbModel.Skill">
               <MappingFragment StoreEntitySet="Skill">
-                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+                <ScalarProperty Name="SkillValue" ColumnName="SkillValue" />
+                <ScalarProperty Name="SkillTitle" ColumnName="SkillTitle" />
                 <ScalarProperty Name="SkillID" ColumnName="SkillID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -287,6 +328,25 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Award">
+            <EntityTypeMapping TypeName="MyPortfolioDbModel.Award">
+              <MappingFragment StoreEntitySet="Award">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AwardID" ColumnName="AwardID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partner">
+            <EntityTypeMapping TypeName="MyPortfolioDbModel.Partner">
+              <MappingFragment StoreEntitySet="Partner">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

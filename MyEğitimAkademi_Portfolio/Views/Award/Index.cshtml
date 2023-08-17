@@ -1,0 +1,48 @@
+﻿@model List<MyEğitimAkademi_Portfolio.Models.Award>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Yetenek Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yetenek Adı</th>
+        <th>Yetenek Açıklaması</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AwardID</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal-@item.AwardID">Sil</a>
+            </td>
+            <div class="modal fade" id="deleteModal-@item.AwardID" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Kaydı Sil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Bu kaydı silmek istediğinizden emin misiniz?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
+                            <a href="/Award/DeleteAward/@item.AwardID" class="btn btn-outline-danger">Evet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><a class="btn btn-outline-success" href="/Award/UpdateAward/@item.AwardID">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Award/AddAward" class="btn btn-outline-primary">Yeni Yetenek Girişi</a>

@@ -11,7 +11,9 @@
     <label>Yetenek ID</label>
     @Html.TextBoxFor(x => x.SkillID, new { @class = "form-control" })
     <label>Yetenek Adı </label>
-    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.SkillTitle, new { @class = "form-control" })
+    <label> Yetenek Yüzdesi </label>
+    @Html.TextBoxFor(x => x.SkillValue, new { @class = "form-control" })
     <br />
     <button class="btn btn-outline-success">Güncelle</button>
     <br />

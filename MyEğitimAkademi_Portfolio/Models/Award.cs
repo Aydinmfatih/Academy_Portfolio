@@ -12,10 +12,10 @@ namespace MyEğitimAkademi_Portfolio.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Skill
+    public partial class Award
     {
-        public int SkillID { get; set; }
-        public string SkillTitle { get; set; }
-        public Nullable<byte> SkillValue { get; set; }
+        public int AwardID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
     }
 }

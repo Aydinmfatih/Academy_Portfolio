@@ -1,0 +1,22 @@
+﻿@model MyEğitimAkademi_Portfolio.Models.Partner
+@{
+    ViewBag.Title = "UpdatePartner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Partner Güncelleme</h2>
+
+
+<form method="post">
+    <label>Partner ID</label>
+    @Html.TextBoxFor(x => x.PartnerID, new { @class = "form-control" })
+    <label>Partner Adı </label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Partner Açıklaması </label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <label>Partner değeri </label>
+    @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+    <br />
+</form>
