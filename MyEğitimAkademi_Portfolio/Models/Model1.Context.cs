@@ -35,5 +35,8 @@ namespace MyEğitimAkademi_Portfolio.Models
         public virtual DbSet<Experience> Experience { get; set; }
         public virtual DbSet<Award> Award { get; set; }
         public virtual DbSet<Partner> Partner { get; set; }
+        public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
     }
 }

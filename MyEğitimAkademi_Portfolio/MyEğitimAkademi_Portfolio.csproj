@@ -129,12 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AwardController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
@@ -145,10 +148,19 @@
     <Compile Include="Models\About.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Award.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Experience.cs">
@@ -243,6 +255,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\colorlib-error-404-7\css\style.css" />
+    <Content Include="Templates\colorlib-error-404-7\index.html" />
+    <Content Include="Templates\colorlib-error-404-7\readme.txt" />
     <Content Include="Templates\css\bootstrap.min.css" />
     <Content Include="Templates\css\bootstrap\mixins\_border-radius.css" />
     <Content Include="Templates\css\bootstrap\mixins\_screen-reader.css" />
@@ -295,6 +310,12 @@
     <Content Include="Templates\js\jquery.min.js" />
     <Content Include="Templates\js\main.js" />
     <Content Include="Templates\js\popper.js" />
+    <Content Include="Templates\web\css\font-awesome.css" />
+    <Content Include="Templates\web\css\style.css" />
+    <Content Include="Templates\web\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\web\images\bg.jpg" />
+    <Content Include="Templates\web\index.html" />
+    <Content Include="Templates\web\w3layouts-License.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -448,6 +469,17 @@
     <Content Include="Views\Partner\Index.cshtml" />
     <Content Include="Views\Partner\AddPartner.cshtml" />
     <Content Include="Views\Partner\UpdatePartner.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\PartialScript.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Templates\web\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\web\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\web\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\web\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\web\fonts\FontAwesome.otf" />
+    <Content Include="Templates\web\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\web\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
