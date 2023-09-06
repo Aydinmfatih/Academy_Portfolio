@@ -105,6 +105,16 @@
           <Property Name="SkillTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="SkillValue" Type="tinyint" />
         </EntityType>
+        <EntityType Name="Social">
+          <Key>
+            <PropertyRef Name="SocialId" />
+          </Key>
+          <Property Name="SocialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LinkedInUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="FaceBookUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="TwitterUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="GithubUrl" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -149,6 +159,7 @@
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Social" EntityType="Self.Social" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Testimonial" EntityType="Self.Testimonial" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Project_Category" Association="Self.FK_Project_Category">
@@ -196,6 +207,7 @@
           <EntitySet Name="Address" EntityType="MyPortfolioDbModel.Address" />
           <EntitySet Name="Admin" EntityType="MyPortfolioDbModel.Admin" />
           <EntitySet Name="Contact" EntityType="MyPortfolioDbModel.Contact" />
+          <EntitySet Name="Social" EntityType="MyPortfolioDbModel.Social" />
         </EntityContainer>
         <EntityType Name="Testimonial">
           <Key>
@@ -312,6 +324,16 @@
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Social">
+          <Key>
+            <PropertyRef Name="SocialId" />
+          </Key>
+          <Property Name="SocialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LinkedInUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FaceBookUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TwitterUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GithubUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -449,6 +471,17 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Social">
+            <EntityTypeMapping TypeName="MyPortfolioDbModel.Social">
+              <MappingFragment StoreEntitySet="Social">
+                <ScalarProperty Name="GithubUrl" ColumnName="GithubUrl" />
+                <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
+                <ScalarProperty Name="FaceBookUrl" ColumnName="FaceBookUrl" />
+                <ScalarProperty Name="LinkedInUrl" ColumnName="LinkedInUrl" />
+                <ScalarProperty Name="SocialId" ColumnName="SocialId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

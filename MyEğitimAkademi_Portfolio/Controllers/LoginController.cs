@@ -23,7 +23,7 @@ namespace MyEğitimAkademi_Portfolio.Controllers
             {
                 FormsAuthentication.SetAuthCookie(values.Username ,false );
                 Session["username"] = values.Username.ToString();
-                return RedirectToAction("Index","Service")
+                return RedirectToAction("Index", "Service");
             }
             return View();
         }

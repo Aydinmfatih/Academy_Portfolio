@@ -38,5 +38,6 @@ namespace MyEğitimAkademi_Portfolio.Models
         public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Social> Social { get; set; }
     }
 }

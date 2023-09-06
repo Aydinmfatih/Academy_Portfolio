@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "AddAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Ekle</h2>
+
+
+<form method="post">
+    <label>Hakkımda Adı</label>
+    <input type="text" name="Introduction" class="form-control" />
+    <br />
+    <label>Hakkımda Başlığı</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Hakkımda İsim Soyisim</label>
+    <input type="text" name="NameSurname" class="form-control" />
+    <br />
+    <label>Hakkımda Açıklaması</label>
+    <textarea name="Description" class="form-control" rows="5"> </textarea>
+    <br />
+    <button class="btn btn-info">Hakkımda Ekle</button>
+</form>
+

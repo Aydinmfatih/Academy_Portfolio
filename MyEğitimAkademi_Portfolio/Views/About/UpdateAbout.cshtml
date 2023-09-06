@@ -1,0 +1,25 @@
+﻿@model MyEğitimAkademi_Portfolio.Models.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Güncelle</h2>
+
+
+<form method="post">
+    <label>Hakkımda ID</label>
+    @Html.TextBoxFor(x => x.AboutId, new { @class = "form-control" })
+    <label>Hakkımda İsim</label>
+    @Html.TextBoxFor(x => x.Introduction, new { @class = "form-control" })
+    <label>Hakkımda Başlığı </label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Hakkımda İsim Soyisim </label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <label>Hakkımda Açıklama  </label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+    <br />
+</form>
+

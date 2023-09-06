@@ -24,11 +24,17 @@ namespace MyEğitimAkademi_Portfolio.Controllers
         }
         public PartialViewResult PartialQuickContact()
         {
-            return PartialView();
+            var values = db.Social.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialFeature()
         {
-            return PartialView();
+            ViewBag.linkedin = db.Social.Select(x => x.LinkedInUrl).FirstOrDefault();
+            ViewBag.facebook = db.Social.Select(x => x.FaceBookUrl).FirstOrDefault();
+            ViewBag.twitter = db.Social.Select(x => x.TwitterUrl).FirstOrDefault();
+            ViewBag.github = db.Social.Select(x => x.GithubUrl).FirstOrDefault();
+            var values = db.About.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialService()
         {

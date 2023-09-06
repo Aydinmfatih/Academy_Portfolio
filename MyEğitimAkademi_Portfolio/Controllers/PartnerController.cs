@@ -46,7 +46,7 @@ namespace MyEğitimAkademi_Portfolio.Controllers
             var model = db.Partner.Find(partner.PartnerID);
             model.Title = partner.Title;
             model.Description = partner.Description;
-            model.Value = model.Value;
+            model.Value = partner.Value;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,19 +1,22 @@
-﻿
+﻿@model List<MyEğitimAkademi_Portfolio.Models.About>
+
 <section id="home" class="w3l-banner pb-5">
     <div class="container pb-md-3">
         <div class="banner-wrapper text-center">
             <div class="">
-                <span class="text">Hakkımda</span>
-                <h1 class="mb-4 title">
-                    Merhaba, <span class="type-js"><span class="text-js">Ben Fatih Aydın</span></span><br>
-                   Back-end Yazılım Geliştiriciyim
-                </h1>
-                <p class="mx-lg-5">
-                    <strong> Merhaba</strong>
-                    , ben bir yazılım geliştiriciyim ve dijital dünyanın kodlarla şekillendiği
-                    o muhteşem yolculuğun bir parçasıyım. Kodlar benim için sadece karakterlerden ibaret değil,
-                    bir düşünceyi, bir vizyonu gerçeğe dönüştüren sihirli araçlardır.!
-                </p>
+                @foreach (var item in Model)
+                {
+                    <span class="text">@item.Introduction</span>
+                    <h1 class="mb-4 title">
+                        Merhaba, <span class="type-js"><span class="text-js">Ben @item.NameSurname</span></span><br>
+                        @item.Title
+                    </h1>
+                    <p class="mx-lg-5">
+                        <strong> Merhaba</strong>
+                        @item.Description
+                    </p>
+                }
+
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-lg-auto col-md-10">
@@ -22,10 +25,10 @@
             </div>
             <ul class="follow-social">
                 <li><p>Beni Takip et</p></li>
-                <li><a href="#url"><span class="fa fa-behance"></span></a></li>
-                <li><a href="#url"><span class="fa fa-linkedin"></span></a></li>
-                <li><a href="#url"><span class="fa fa-facebook-official"></span></a></li>
-                <li><a href="#url"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="@ViewBag.linkedin" target="_blank"><span class="fa fa-linkedin"></span></a></li>
+                <li><a href="@ViewBag.facebook" target="_blank"><span class="fa fa-facebook-official"></span></a></li>
+                <li><a href="@ViewBag.twitter" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="@ViewBag.github" target="_blank"><span class="fa fa-github"></span></a></li>
             </ul>
         </div>
     </div>
