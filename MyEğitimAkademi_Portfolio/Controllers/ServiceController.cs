@@ -10,7 +10,7 @@ namespace MyEğitimAkademi_Portfolio.Controllers
     public class ServiceController : Controller
     {
         MyPortfolioDbEntities db = new MyPortfolioDbEntities();
-
+        [Authorize]
         public ActionResult Index()
         {
             var values = db.Service.ToList();

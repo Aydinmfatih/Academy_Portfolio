@@ -135,6 +135,7 @@
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -480,6 +481,7 @@
     <Content Include="Templates\web\fonts\FontAwesome.otf" />
     <Content Include="Templates\web\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Templates\web\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
